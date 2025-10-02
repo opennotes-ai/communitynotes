@@ -1,0 +1,43 @@
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies including OpenSSL for Prisma
+RUN apk add --no-cache \
+    dumb-init \
+    openssl \
+    libc6-compat \
+    && addgroup -g 1001 -S nodejs \
+    && adduser -S nodejs -u 1001
+
+# Copy package files
+COPY package*.json ./
+COPY tsconfig.json ./
+COPY prisma ./prisma/
+
+# Install ALL dependencies
+RUN npm ci && npm cache clean --force
+
+# Copy source code
+COPY --chown=nodejs:nodejs . .
+
+# Generate Prisma client only (skip TypeScript build for now)
+RUN npm run db:generate
+
+# Create necessary directories with proper permissions
+RUN mkdir -p logs reports && chown -R nodejs:nodejs logs reports
+
+# Switch to non-root user
+USER nodejs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) }).on('error', () => process.exit(1))"
+
+# Start application using tsx for development
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["npx", "tsx", "src/index.ts"]
