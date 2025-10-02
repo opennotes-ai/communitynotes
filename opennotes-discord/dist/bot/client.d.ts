@@ -1,0 +1,41 @@
+import { Client } from 'discord.js';
+import { MessageHandler } from './handlers/messageHandler.js';
+import { InteractionHandler } from './handlers/interactionHandler.js';
+import { NoteAuthoringCommands } from './commands/NoteAuthoringCommands.js';
+import { NoteCommands } from './commands/noteCommands.js';
+import { NotificationCommands } from './commands/NotificationCommands.js';
+import { NotificationService, NotificationIntegration } from '../notifications/index.js';
+import { BotStatus } from '../shared/types/discord.js';
+export declare class DiscordBot {
+    client: Client;
+    messageHandler: MessageHandler;
+    interactionHandler: InteractionHandler;
+    private verificationService;
+    private notificationService;
+    private notificationIntegration;
+    private notificationScheduler;
+    private userService;
+    private requestAggregationService;
+    private verificationCommands;
+    private noteAuthoringCommands;
+    private noteCommands;
+    private notificationCommands;
+    private isReady;
+    constructor();
+    private setupEventListeners;
+    private onReady;
+    private registerCommands;
+    private onError;
+    private onWarn;
+    private onGuildJoin;
+    private onGuildLeave;
+    start(): Promise<void>;
+    stop(): Promise<void>;
+    getStatus(): BotStatus;
+    getNoteCommands(): NoteCommands;
+    getNoteAuthoringCommands(): NoteAuthoringCommands;
+    getNotificationCommands(): NotificationCommands;
+    getNotificationService(): NotificationService;
+    getNotificationIntegration(): NotificationIntegration;
+}
+//# sourceMappingURL=client.d.ts.map

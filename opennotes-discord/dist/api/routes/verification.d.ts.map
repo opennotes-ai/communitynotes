@@ -1,0 +1,1 @@
+{"version":3,"file":"verification.d.ts","sourceRoot":"","sources":["../../../src/api/routes/verification.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAqB,MAAM,SAAS,CAAC;AAEpD,OAAO,EAAE,mBAAmB,EAAE,MAAM,2CAA2C,CAAC;AAChF,OAAO,EAAE,sBAAsB,EAAE,MAAM,8CAA8C,CAAC;AAOtF,wBAAgB,wBAAwB,CACtC,mBAAmB,EAAE,mBAAmB,EACxC,sBAAsB,EAAE,sBAAsB,GAC7C,MAAM,CAoPR"}
