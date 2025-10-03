@@ -1,0 +1,96 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opennotes-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - DATABASE_URL=postgresql+asyncpg://opennotes:opennotes_password@postgres:5432/opennotes
+      - REDIS_URL=redis://redis:6379/0
+      - NATS_URL=nats://nats:4222
+      - JWT_SECRET_KEY=dev-secret-key-change-in-production
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      nats:
+        condition: service_started
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: opennotes-postgres
+    environment:
+      - POSTGRES_USER=opennotes
+      - POSTGRES_PASSWORD=opennotes_password
+      - POSTGRES_DB=opennotes
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U opennotes"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: opennotes-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+  nats:
+    image: nats:2.10-alpine
+    container_name: opennotes-nats
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - nats_data:/data
+    restart: unless-stopped
+    command: ["-js", "-sd", "/data"]
+
+  migrations:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opennotes-migrations
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://opennotes:opennotes_password@postgres:5432/opennotes
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["alembic", "upgrade", "head"]
+    profiles:
+      - migrations
+
+volumes:
+  postgres_data:
+  redis_data:
+  nats_data:

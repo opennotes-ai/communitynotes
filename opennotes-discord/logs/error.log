@@ -7247,3 +7247,38 @@ Please make sure your database server is running at `localhost:5432`. {
     }
   }
 }
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:50:00 [[31merror[39m]: OpenNotes service request failed (attempt 1/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:01 [[31merror[39m]: OpenNotes service request failed (attempt 2/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:03 [[31merror[39m]: OpenNotes service request failed (attempt 3/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:03 [[31merror[39m]: OpenNotes service health check failed {
+  "error": {
+    "cause": {
+      "errno": -111,
+      "code": "ECONNREFUSED",
+      "syscall": "connect",
+      "address": "::1",
+      "port": 4000
+    }
+  }
+}

@@ -28273,3 +28273,280 @@ one provider","error":{}}
 16:28:22 [[32minfo[39m]: Processed scheduled notifications {
   "messagesProcessed": 0
 }
+16:46:09 [[32minfo[39m]: Email verification provider initialized 
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[32minfo[39m]: Verification service initialized {
+  "providers": [
+    "email",
+    "phone"
+  ]
+}
+16:46:09 [[32minfo[39m]: Email verification provider initialized 
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[32minfo[39m]: Verification service initialized {
+  "providers": [
+    "email",
+    "phone"
+  ]
+}
+16:46:09 [[32minfo[39m]: Email verification provider initialized 
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[32minfo[39m]: Verification service initialized {
+  "providers": [
+    "email",
+    "phone"
+  ]
+}
+16:46:09 [[32minfo[39m]: Email verification provider initialized 
+16:46:09 [[31merror[39m]: Failed to initialize phone provider {
+  "error": {}
+}
+16:46:09 [[32minfo[39m]: Verification service initialized {
+  "providers": [
+    "email",
+    "phone"
+  ]
+}
+16:46:09 [[32minfo[39m]: Starting Community Notes Discord Bot... {
+  "nodeEnv": "development",
+  "logLevel": "info"
+}
+16:46:09 [[32minfo[39m]: Database connected successfully 
+16:46:09 [[32minfo[39m]: Redis client connected 
+16:46:09 [[32minfo[39m]: Connected to NATS server {
+  "server": "nats://nats:4222",
+  "clientId": 15
+}
+16:46:09 [[32minfo[39m]: Ensured NATS stream: NOTIFICATIONS 
+16:46:09 [[32minfo[39m]: Ensured NATS stream: ANALYTICS 
+16:46:09 [[32minfo[39m]: Ensured NATS stream: EVENTS 
+16:46:09 [[32minfo[39m]: Socket.IO server initialized for dashboard 
+16:46:09 [[32minfo[39m]: API server started on port 3000 
+16:46:10 [[32minfo[39m]: Discord bot is ready! {
+  "username": "OpenNotes",
+  "guilds": 1,
+  "users": 1
+}
+16:46:10 [[32minfo[39m]: Discord bot login successful 
+16:46:10 [[32minfo[39m]: External scoring job initialized {
+  "intervalMinutes": 30,
+  "healthCheckIntervalMinutes": 5
+}
+16:46:10 [[32minfo[39m]: Community Notes Discord Bot started successfully! 
+16:46:10 [[32minfo[39m]: Successfully registered application commands 
+16:46:10 [[32minfo[39m]: Starting notification service 
+16:46:10 [[32minfo[39m]: Starting notification scheduler 
+16:46:10 [[32minfo[39m]: Processed scheduled notifications {
+  "messagesProcessed": 0
+}
+16:46:13 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:46:28 [[32minfo[39m]: Slash command executed {
+  "commandName": "verify",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:46:36 [[32minfo[39m]: Modal submit {
+  "customId": "verification_modal_email",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:46:37 [[32minfo[39m]: Verification attempt {
+  "provider": "email",
+  "method": "email",
+  "target": "ka*****@gmail.com",
+  "success": true
+}
+16:46:37 [[32minfo[39m]: Security event logged {
+  "eventType": "verification_attempt",
+  "discordUserId": "696877497287049258",
+  "severity": "low",
+  "details": {
+    "method": "email",
+    "target": "ka*****@gmail.com",
+    "verificationId": "b883daf2b474fc6652c3f9512e8c413a"
+  }
+}
+16:46:43 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:47:08 [[32minfo[39m]: Slash command executed {
+  "commandName": "verify-code",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:47:13 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:47:43 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:48:00 [[32minfo[39m]: Slash command executed {
+  "commandName": "verify-code",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:48:09 [[32minfo[39m]: NATS connection status: {
+  "type": "pingTimer",
+  "data": "1"
+}
+16:48:10 [[32minfo[39m]: Processed scheduled notifications {
+  "messagesProcessed": 0
+}
+16:48:13 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:48:43 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:48:54 [[32minfo[39m]: Slash command executed {
+  "commandName": "verify-code",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:48:54 [[32minfo[39m]: User marked as verified {
+  "discordUserId": "696877497287049258",
+  "method": "email"
+}
+16:48:54 [[32minfo[39m]: Security event logged {
+  "eventType": "verification_attempt",
+  "discordUserId": "696877497287049258",
+  "severity": "low",
+  "details": {
+    "action": "completed",
+    "method": "email",
+    "verificationId": "b883daf2b474fc6652c3f9512e8c413a",
+    "success": true
+  }
+}
+16:49:13 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:49:22 [[32minfo[39m]: Message context menu used {
+  "commandName": "Request Community Note",
+  "messageId": "1423351098718162994",
+  "userId": "696877497287049258",
+  "guildId": "1423068966670176407"
+}
+16:49:43 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:50:00 [[31merror[39m]: OpenNotes service request failed (attempt 1/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:01 [[31merror[39m]: OpenNotes service request failed (attempt 2/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:03 [[31merror[39m]: OpenNotes service request failed (attempt 3/3) {
+  "endpoint": "/health",
+  "error": "fetch failed"
+}
+16:50:03 [[31merror[39m]: OpenNotes service health check failed {
+  "error": {
+    "cause": {
+      "errno": -111,
+      "code": "ECONNREFUSED",
+      "syscall": "connect",
+      "address": "::1",
+      "port": 4000
+    }
+  }
+}
+16:50:03 [[33mwarn[39m]: External OpenNotes service is unhealthy {
+  "health": {
+    "status": "unhealthy",
+    "version": "unknown",
+    "uptime": 0
+  }
+}
+16:50:09 [[32minfo[39m]: NATS connection status: {
+  "type": "pingTimer",
+  "data": "1"
+}
+16:50:10 [[32minfo[39m]: Processed scheduled notifications {
+  "messagesProcessed": 0
+}
+16:50:13 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:50:43 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:51:14 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:51:44 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:52:09 [[32minfo[39m]: NATS connection status: {
+  "type": "pingTimer",
+  "data": "1"
+}
+16:52:10 [[32minfo[39m]: Processed scheduled notifications {
+  "messagesProcessed": 0
+}
+16:52:14 [[32minfo[39m]: API request {
+  "method": "GET",
+  "url": "/health",
+  "ip": "::1",
+  "userAgent": "Wget"
+}
+16:52:26 [[32minfo[39m]: Received SIGTERM, starting graceful shutdown... 
+16:52:26 [[32minfo[39m]: Stopping Community Notes Discord Bot... 
+16:52:26 [[32minfo[39m]: External scoring job stopped 
+16:52:26 [[32minfo[39m]: Notification scheduler stopped 
+16:52:26 [[32minfo[39m]: Stopping notification service 
+16:52:26 [[32minfo[39m]: Discord bot stopped 
+16:52:26 [[32minfo[39m]: API server stopped 
+16:52:26 [[32minfo[39m]: Redis client disconnected 
+16:52:26 [[32minfo[39m]: NATS connection closed gracefully 
+16:52:26 [[32minfo[39m]: NATS connection closed 
+16:52:26 [[32minfo[39m]: Received SIGTERM, starting graceful shutdown... 
+16:52:26 [[32minfo[39m]: Stopping Community Notes Discord Bot... 
+16:52:26 [[32minfo[39m]: API server stopped 
+16:52:26 [[32minfo[39m]: Database disconnected successfully 
